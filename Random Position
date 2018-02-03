@@ -1,0 +1,53 @@
+from turtle import *
+from random import randint
+from random import shuffle
+
+speed(0)
+penup()
+goto(-140,140)
+
+for step in range(16):
+    write(step, align = 'center')
+    right(90)
+    for space in range (6):
+     penup()
+     forward(20)
+     pendown()
+     forward(10)
+    penup()
+    backward(180)
+    left(90)
+    forward(20)
+
+red = Turtle()
+red.color('red')
+blue = Turtle()
+blue.color('blue')
+silver = Turtle()
+silver.color('silver')
+gold = Turtle()
+gold.color('gold')
+
+list = [1, 2, 3, 4]
+shuffle(list)
+colorlist = [red, blue, gold, silver]
+shuffle(colorlist)
+for i in range (0, 4):
+ colorlist[i].shape('turtle')
+ colorlist[i].penup()
+ colorlist[i].goto(-160, 130 - 30 * int(list[i]))
+ colorlist[i].pendown()
+ for twirl in range(5):
+     if (i % 2 == 0):
+         colorlist[i].left(72)
+     elif (i % 2 != 0):
+         colorlist[i].right(72)
+
+
+
+for turn in range(85):
+    shuffle(colorlist)
+    for i in range (0, 4):
+        colorlist[i].forward(randint(1, 7))
+
+done()
